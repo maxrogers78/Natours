@@ -1,0 +1,187 @@
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 30px;
+}
+
+/*! HEADER */
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,                                    //? Dirección del gradiente irá hacia la esquina inferior derecha (desde la esquina superior izquierda)
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+    background-size: cover;                                 //? Tamaño de la imagen se adapta al tamaño del box 
+    background-position: top;                               //? La imagen siempre estará pegada a la parte superior del contenedor
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);     //? El contenedor se ajustará a la forma de un polígono (esq sup izq, esq sup der, esq inf der, esq inf izq)
+}
+
+.header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 0;
+    bottom: 0;
+}
+
+.header__logo {
+    height: 35px;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);                       //? Hacemos que el centro sea el centro del contenedor y no del padre
+    text-align: center;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+
+    backface-visibility: hidden;                            //? Escondimos la parte escondida de los contenedores y sus elementos (por si hay problemas con la animación)
+}
+
+.heading-primary--main {
+    display: block;                                         //? El contenedor usará el 100% del width
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;                             //? Nombre de la animación
+    animation-duration: 1s;                                 //? Duración de la animación
+    animation-timing-function: ease-out;                    //? Variación de progreso de la animación
+
+    /* animation-iteration-count: 3; */                     //? Veces que la animación se repetirá
+    /* animation-delay: 3s; */                              //? Tiempo que experará la animación para iniciar
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+
+    animation: moveInRight 1s ease-out;                     //? Versión resumida de las propiedades de la animación
+}
+
+@keyframes moveInLeft {                                     //? Animación mover texto de izquierda a derecha
+    0% {                                                    //? Inicio de la animación
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+    
+    100% {                                                  //? Final de la animación
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link,                                                  //? Estilos del link por defecto (default azul)
+.btn:visited {                                              //? Estilos del link ya visitado (default morado)
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 200ms;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);            //? Sombra del elemento (x y blur color)
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+}
+
+.btn::after {                                               //? Elemento ubicado DESPUÉS del elemento seleccionado (en la misma clase)
+    content: '';                                            //? Contenido del elemento (usualmente se deja vacío)
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 400ms;
+}
+
+.btn--white::after {
+    background-color: $color-white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);                     //? Escala el tamaño del elemento
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom 500ms ease-out 750ms;
+    animation-fill-mode: backwards;                         //? Las propiedades se aplicarán antes que inicie la animación (0% de moveInBottom)
+}
