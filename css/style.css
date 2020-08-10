@@ -37,7 +37,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);     /*? El contenedor se ajustará a la forma de un polígono (esq sup izq, esq sup der, esq inf der, esq inf izq) */
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 40px;
     left: 40px;
@@ -45,11 +45,11 @@ body {
     bottom: 0;
 }
 
-.logo {
+.header__logo {
     height: 35px;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -65,7 +65,7 @@ body {
     backface-visibility: hidden;                            /*? Escondimos la parte escondida de los contenedores y sus elementos (por si hay problemas con la animación) */
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;                                         /*? El contenedor usará el 100% del width */
     font-size: 60px;
     font-weight: 400;
@@ -78,7 +78,7 @@ body {
     /* animation-delay: 3s; */                              /*? Tiempo que experará la animación para iniciar */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 20px;
     font-weight: 700;
@@ -152,7 +152,7 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -170,7 +170,7 @@ body {
     transition: all 400ms;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -179,7 +179,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom 500ms ease-out 750ms;
     animation-fill-mode: backwards;                         /*? Las propiedades se aplicarán antes que inicie la animación (0% de moveInBottom) */
 }
