@@ -6,7 +6,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   box-sizing: border-box; }
@@ -162,15 +163,15 @@ body {
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #28b485;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 0.2rem solid #55c57a;
+  border-bottom: 0.2rem solid #28b485;
   padding: .3rem .8rem;
   transition: all 200ms; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #28b485;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.2rem); }
@@ -318,6 +319,66 @@ body {
     font-size: 6rem;
     font-weight: 100; }
 
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: .3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg);
+  position: relative; }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); }
+  .story__img {
+    height: 100%;
+    transition: all 500ms;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 500ms;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(0.3rem) brightness(80%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -383,3 +444,7 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }

@@ -66,16 +66,16 @@
     &:link,
     &:visited {
         font-size: $default-font-size;
-        color: $color-primary;
+        color: $color-primary-dark;
         display: inline-block;
         text-decoration: none;
-        border-bottom: .2rem solid $color-primary;
+        border-bottom: .2rem solid $color-primary-dark;
         padding: .3rem .8rem;
         transition: all 200ms;
     }
 
     &:hover {
-        background-color: $color-primary;
+        background-color: $color-primary-dark;
         color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
         transform: translateY(-.2rem);
