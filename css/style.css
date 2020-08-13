@@ -76,7 +76,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #49d355, #01c267);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: .2rem;
@@ -167,15 +167,15 @@ body {
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #28b485;
+  color: #01c267;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 0.2rem solid #28b485;
+  border-bottom: 0.2rem solid #01c267;
   padding: .3rem .8rem;
   transition: all 200ms; }
 
 .btn-text:hover {
-  background-color: #28b485;
+  background-color: #01c267;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   transform: translateY(-0.2rem); }
@@ -223,7 +223,7 @@ body {
     font-size: 6rem;
     margin-bottom: .5rem;
     display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-image: linear-gradient(to right, #49d355, #01c267);
     -webkit-background-clip: text;
     color: transparent; }
   .feature-box:hover {
@@ -252,7 +252,7 @@ body {
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
       .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+        background-image: linear-gradient(to right bottom, #49d355, #01c267); }
       .card__side--back-3 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
   .card:hover .card__side--front {
@@ -270,7 +270,7 @@ body {
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+      background-image: linear-gradient(to right bottom, #49d355, #01c267), url(../img/nat-6.jpg); }
     .card__picture--3 {
       background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
   .card__heading {
@@ -290,7 +290,7 @@ body {
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
     .card__heading-span--2 {
-      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+      background-image: linear-gradient(to right bottom, rgba(73, 211, 85, 0.85), rgba(1, 194, 103, 0.85)); }
     .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
@@ -488,7 +488,7 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(73, 211, 85, 0.8), rgba(1, 194, 103, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -544,6 +544,116 @@ body {
     width: 80%;
     float: right; }
 
+.navigation__checkbox {
+  display: none; }
+
+.navigation__button {
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
+
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#49d355, #01c267);
+  z-index: 1000;
+  transition: transform 800ms; }
+
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  -webkit-transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  width: 0; }
+
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%; }
+
+.navigation__item {
+  margin: 1rem; }
+
+.navigation__link:link, .navigation__link:visited {
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 250%;
+  transition: all 400ms;
+  display: inline-block; }
+
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3.4rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    width: 3rem;
+    height: .2rem;
+    background-color: #333;
+    display: inline-block; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 200ms; }
+  .navigation__icon::before {
+    top: -.8rem; }
+  .navigation__icon::after {
+    top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-45deg); }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -551,7 +661,7 @@ body {
 
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(73, 211, 85, 0.8), rgba(1, 194, 103, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem; }
@@ -569,7 +679,7 @@ body {
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+  background-image: linear-gradient(to right bottom, #49d355, #01c267); }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
